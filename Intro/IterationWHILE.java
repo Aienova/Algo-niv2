@@ -13,8 +13,6 @@ public class IterationWHILE {
             Scanner clavier = new Scanner(System.in); /* Déclaration du scanner Instance de l'Objet Scanner 
                                                                     */
 
-
-
             /*Compteur while */ 
             while(i<=10){
 
@@ -34,6 +32,8 @@ public class IterationWHILE {
             }
 
             System.out.println("Bienvenu en ABC Dev !");
+
+            clavier.close();
 
 
         }

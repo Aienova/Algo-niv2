@@ -33,6 +33,8 @@ public class IterationDOWHILE {
 
             System.out.println("Bienvenu en ABC Dev !");
 
+                        clavier.close();
+
 
         }
 
