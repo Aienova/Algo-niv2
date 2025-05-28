@@ -24,7 +24,7 @@ package exoParNiv;
  * false
  * 
  * 
- * Merci poru votre commande, ça sera près dans 20min,
+ * Merci pour votre commande, ça sera près dans 20min,
  * 
  * 
  * 
@@ -33,6 +33,6 @@ package exoParNiv;
 
 public class exoNiv1 {
 
-    
+
     
 }
