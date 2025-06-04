@@ -4,6 +4,8 @@ import java.time.format.DateTimeFormatter;
 
 public class Date {
     public static void main(String[] args) {
+
+        
         // Current date and time
         LocalDateTime now = LocalDateTime.now();
 

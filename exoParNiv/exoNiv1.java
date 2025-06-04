@@ -107,10 +107,6 @@ public class exoNiv1 {
                 isVegetarian=true;
             }
 
-  
-
-
-
         }
 
                   if(response==true){
