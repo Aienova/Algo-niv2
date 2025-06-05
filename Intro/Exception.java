@@ -13,10 +13,14 @@ public class Exception {
         System.out.println("Entrez un nombre pour le dividende : ");
         int dividende = scanner.nextInt();
 
-
+        try {
             int result = dividende / diviseur;
             System.out.println("Result: " + result);
-        
+        } catch (ArithmeticException e) {
+            System.out.println("Erreur : Division par zéro non autorisée.");
+        }
+
+        System.out.println("Fin du programme.");
     }
 
 

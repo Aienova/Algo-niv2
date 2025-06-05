@@ -1,4 +1,5 @@
 package Intro;
+import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
@@ -15,21 +16,31 @@ public class Date {
         LocalDateTime now = LocalDateTime.now();
 
         // Define a formatter
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM-yyyy HH:mm:ss");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
         // Print the current date and time
         
                 System.out.println(now);
 
-        // y: Année, M: Mois, d: Jour, H: Heure (24h), m: Minute, s: Seconde
+
+
+        // y: Année, m: Mois, d: Jour, h: Heure (24h), m: Minute, s: Seconde
 
         // Format the date-time
         String formattedDate = now.format(formatter);
         System.out.println("Date d'aujourd'hui format Francophone: " + formattedDate);
 
         // Parse a string back to LocalDateTime
-        String dateTimeString = "21/05/2025 14:30:00";
+        String dateTimeString = "09/06/2025 14:30:00";
         LocalDateTime parsedDate = LocalDateTime.parse(dateTimeString, formatter);
-        System.out.println("Conversion de date String en LocalDateTime: " + parsedDate);
+        LocalDateTime parsedDatePlus = parsedDate.plusYears(1);
+
+
+        System.out.println("Conversion de date String en LocalDateTime: " + parsedDatePlus.format(formatter));
+
+            Instant maintenant = Instant.now();
+
+        System.out.println("Instant actuel: " + maintenant.getEpochSecond());
+
     }
         catch(DateTimeParseException e){
             System.out.println("Erreur de formatage de la date : ");

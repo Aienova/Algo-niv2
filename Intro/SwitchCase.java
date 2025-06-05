@@ -13,7 +13,6 @@ public class SwitchCase {
                System.out.println("Veuillez choisir un nombre entre 1 et 12, pour afficher son mois :");
                 month = clavier.nextInt();
 
-
                switch (month) {
 
                 case 1:System.out.println("Janvier");break;
