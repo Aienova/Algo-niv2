@@ -7,7 +7,48 @@ import java.util.Scanner;
 
 public class Vol {
 
-        public static void main(String[]args) {
+
+    /* Méthode pour ses connecter, public pour avoir accès depuis n'importe quel fichier, 
+    boolean pour qu'il retourne uniquement une valeur de type booléen, 
+    prend en paramètre les identifiants de l'utilisateur et les identifiants de l'application,
+    retourne true si les identifiants sont corrects, false sinon.
+     * 
+     */
+
+    public static boolean connection(String userLogin, String userPassword, String login, String password){
+
+        return userLogin.equals(login) && userPassword.equals(password);
+    }
+
+        public static double reduction(double price,double reductionPercentage) {
+
+            return price * (1 - reductionPercentage / 100);
+        }
+
+
+        public static double augmentation(double price,double augmentationPercentage) {
+
+            return price * (1 + augmentationPercentage / 100);
+        }
+
+        public static double changePrice(double price,double percentage, String sign) {
+
+            if(sign.equals("+")) {
+                return augmentation(price,percentage); // Augmentation de 10%
+            } else if (sign.equals("-")) {
+                return reduction(price,percentage); // Réduction de 10%
+
+            }else{
+
+                return price; // Si le signe n'est ni + ni -, on ne change pas le prix
+            }
+
+            
+        }      
+
+
+
+    public static void main(String[]args) {
 
 
             String departure,arrival;
@@ -34,9 +75,9 @@ public class Vol {
             System.out.println("Veuillez entrer votre mot de passe : ");
             userPassword = clavier.nextLine();
 
-            connection = userLogin.equals(login) && userPassword.equals(password);
 
-            if(connection==true){ {
+
+            if(connection(userLogin, userPassword,login, password)){ {
                 System.out.println("Connexion réussie !");
                 int i=0;
 
@@ -110,9 +151,9 @@ public class Vol {
                 LocalDateTime today = LocalDateTime.now();
                 long daysUntilDeparture = java.time.Duration.between(today, departureDate).toDays();
                 if (daysUntilDeparture <= 7) {
-                    price *= 1.4; // Augmenter le prix de 40% si le vol est dans moins d'une semaine
+                    price = changePrice(price,40,"+"); // Augmenter le prix de 40% si le vol est dans moins d'une semaine
                 } else if (daysUntilDeparture >= 180) {
-                    price *= 0.6; // Diminuer le prix de 40% si le vol est plus de 6 mois
+                    price = changePrice(price,40,"-"); // Diminuer le prix de 40% si le vol est plus de 6 mois
                 }
                                     errorDate = false;
 
